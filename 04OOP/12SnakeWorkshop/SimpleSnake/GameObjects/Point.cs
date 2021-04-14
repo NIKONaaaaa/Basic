@@ -11,6 +11,7 @@
             this.LeftX = leftX;
             this.TopY = topY;
         }
+
         public void Draw(char symbol)
         {
             Console.SetCursorPosition(this.LeftX, this.TopY);

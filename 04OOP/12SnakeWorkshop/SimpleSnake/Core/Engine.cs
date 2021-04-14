@@ -60,29 +60,17 @@
             ConsoleKeyInfo userInput = Console.ReadKey();
             switch (userInput.Key)
             {
-                case ConsoleKey.LeftArrow:
-                    if (this.direction != Direction.Right)
-                    {
-                        this.direction = Direction.Left;
-                    }
+                case ConsoleKey.LeftArrow when this.direction != Direction.Right:
+                    this.direction = Direction.Left;
                     break;
-                case ConsoleKey.RightArrow:
-                    if (this.direction != Direction.Left)
-                    {
-                        this.direction = Direction.Right;
-                    }
+                case ConsoleKey.RightArrow when this.direction != Direction.Left:
+                    this.direction = Direction.Right;
                     break;
-                case ConsoleKey.DownArrow:
-                    if (this.direction != Direction.Up)
-                    {
-                        this.direction = Direction.Down;
-                    }
+                case ConsoleKey.DownArrow when this.direction != Direction.Up:
+                    this.direction = Direction.Down;
                     break;
-                case ConsoleKey.UpArrow:
-                    if (this.direction != Direction.Down)
-                    {
-                        this.direction = Direction.Up;
-                    }
+                case ConsoleKey.UpArrow when this.direction != Direction.Down:
+                    this.direction = Direction.Up;
                     break;
             }
             Console.CursorVisible = false;
@@ -98,7 +86,7 @@
             Console.SetCursorPosition(leftX, topY + 1);
             Console.Write("Your choice: ");
 
-            string input = Console.ReadKey().KeyChar.ToString();
+            string input = Console.ReadKey().KeyChar.ToString().ToLower();
             if (input == "y")
             {
                 Console.Clear();

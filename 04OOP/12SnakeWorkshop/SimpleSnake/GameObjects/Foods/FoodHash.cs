@@ -5,7 +5,8 @@
     {
         private const char FoodSymbol = '#';
         private const int Points = 3;
-        private const ConsoleColor Color = ConsoleColor.Green;
+        private const ConsoleColor Color = ConsoleColor.Blue;
+
         public FoodHash(Wall wall) : base(wall, FoodSymbol, Points, Color)
         {
 
