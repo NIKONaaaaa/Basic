@@ -131,9 +131,11 @@
             Console.SetCursorPosition(leftX, topY + 1);
             Console.Write($"Player level : {this.snake.SnakeLevel}");
             Console.SetCursorPosition(leftX, topY + 2);
-            Console.Write(new string('-', 18));
+            Console.Write(new string('-', 18));  
             Console.SetCursorPosition(leftX, topY + 17);
             Console.Write($"Version: {this.version:f2}");
+            
+            // TODO: Implement High Score
         }
     }
 }
