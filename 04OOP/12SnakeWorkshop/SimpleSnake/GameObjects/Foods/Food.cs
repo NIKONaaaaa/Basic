@@ -8,7 +8,9 @@
         private readonly char foodSymbol;
         private readonly Random random;
         private readonly Wall wallInfo;
-        private ConsoleColor foodColor;
+        private readonly ConsoleColor foodColor;
+
+        public int FoodPoints { get; private set; }
 
         protected Food(Wall wall, char foodSymbol, int foodPoints, ConsoleColor foodColor) : base(wall.LeftX, wall.TopY)
         {
@@ -18,18 +20,19 @@
             this.FoodPoints = foodPoints;
             this.foodColor = foodColor;
         }
-        public int FoodPoints { get; private set; }
 
         public void SetRandomPosition(Queue<Point> snakeElements)
         {
             bool isPointOfSnake = false;
+
             do
             {
                 this.LeftX = random.Next(2, wallInfo.LeftX - 2);
                 this.TopY = random.Next(2, wallInfo.TopY - 2);
 
                 isPointOfSnake = snakeElements.Any(p => p.LeftX == this.LeftX && p.TopY == this.TopY);
-            } while (isPointOfSnake);
+            } 
+            while (isPointOfSnake);
 
             Console.BackgroundColor = this.foodColor;
             this.Draw(foodSymbol);

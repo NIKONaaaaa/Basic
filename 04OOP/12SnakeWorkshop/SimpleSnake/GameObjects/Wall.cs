@@ -4,7 +4,8 @@
     {
         private const char WallSymbol = '\u25A0';
 
-        public Wall(int leftX, int topY) : base(leftX, topY)
+        public Wall(int leftX, int topY) 
+            : base(leftX, topY)
         {
             this.InitializeWallBorders();
         }
