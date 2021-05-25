@@ -6,9 +6,9 @@
     {
         static void Main()
         {
-            string input = Console.ReadLine();
             HashSet<string> cars = new HashSet<string>();
-            while (input != "END")
+            string input;
+            while ((input = Console.ReadLine()) != "END")
             {
                 string direction = input.Split(", ", StringSplitOptions.RemoveEmptyEntries)[0];
                 string car = input.Split(", ", StringSplitOptions.RemoveEmptyEntries)[1];
@@ -20,7 +20,6 @@
                 {
                     cars.Remove(car);
                 }
-                input = Console.ReadLine();
             }
             Console.WriteLine(cars.Count == 0 ? "Parking Lot is Empty" : string.Join(Environment.NewLine, cars));
         }
