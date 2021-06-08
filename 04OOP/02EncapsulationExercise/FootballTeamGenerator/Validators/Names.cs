@@ -1,4 +1,4 @@
-﻿namespace FootballTeamGenerator
+﻿namespace FootballTeamGenerator.Validators
 {
     using System;
     public class Names

@@ -1,5 +1,6 @@
 ﻿namespace FootballTeamGenerator
 {
+    using Validators;
     public class PlayerStatList
     {
         private int endurance;
@@ -9,12 +10,22 @@
         private int shooting;
         private double average;
 
+        public PlayerStatList(int[] stats)
+        {
+            Endurance = stats[0];
+            Sprint = stats[1];
+            Dribble = stats[2];
+            Passing = stats[3];
+            Shooting = stats[4];
+            Average = 0;
+        }
+
         public int Endurance
         {
             get => endurance;
             private set
             {
-                Stats.Validate(value, "Endurance");
+                Stats.Validate("Endurance", value);
 
                 endurance = value;
             }
@@ -24,7 +35,7 @@
             get => sprint;
             private set
             {
-                Stats.Validate(value, "Sprint");
+                Stats.Validate("Sprint", value);
 
                 sprint = value;
             }
@@ -35,7 +46,7 @@
             get => dribble;
             private set
             {
-                Stats.Validate(value, "Dribble");
+                Stats.Validate("Dribble", value);
 
                 dribble = value;
             }
@@ -46,7 +57,7 @@
             get => passing;
             private set
             {
-                Stats.Validate(value, "Passing");
+                Stats.Validate("Passing", value);
 
                 passing = value;
             }
@@ -57,7 +68,7 @@
             get => shooting;
             private set
             {
-                Stats.Validate(value, "Shooting");
+                Stats.Validate("Shooting", value);
 
                 shooting = value;
             }
@@ -71,16 +82,6 @@
                 value = (dribble + endurance + passing + shooting + sprint) / 5.00;
                 average = value;
             }
-        }
-
-        public PlayerStatList(int endurance, int sprint, int dribble, int passing, int shooting)
-        {
-            Endurance = endurance;
-            Sprint = sprint;
-            Dribble = dribble;
-            Passing = passing;
-            Shooting = shooting;
-            Average = 0;
         }
     }
 }

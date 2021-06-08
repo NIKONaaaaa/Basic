@@ -1,11 +1,11 @@
-﻿namespace FootballTeamGenerator
+﻿namespace FootballTeamGenerator.Validators
 {
     using System;
     public class Stats
     {
         private const int MaxStat = 100;
 
-        public static void Validate(int value, string stat)
+        public static void Validate(string stat, int value)
         {
             if (0 > value || value > MaxStat)
             {

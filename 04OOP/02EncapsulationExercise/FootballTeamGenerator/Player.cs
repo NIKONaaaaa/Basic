@@ -1,5 +1,6 @@
 ﻿namespace FootballTeamGenerator
 {
+    using Validators;
     public class Player
     {
         private string name;

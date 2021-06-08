@@ -22,12 +22,12 @@
                             break;
                         case "Add" when teams.ContainsKey(teamName):
                             string playerName = splitInput[2];
-                            int endurance = int.Parse(splitInput[3]);
-                            int sprint = int.Parse(splitInput[4]);
-                            int dribble = int.Parse(splitInput[5]);
-                            int passing = int.Parse(splitInput[6]);
-                            int shooting = int.Parse(splitInput[7]);
-                            teams[teamName].AddPlayer(new Player(playerName, new PlayerStatList(endurance, sprint, dribble, passing, shooting)));
+                            int[] statValues = new int[5];
+                            for (int index = 3; index <= 7; index++)
+                            {
+                                statValues[index - 3] = (int.Parse(splitInput[index]));
+                            }
+                            teams[teamName].AddPlayer(new Player(playerName, new PlayerStatList(statValues)));
                             break;
                         case "Remove" when teams.ContainsKey(teamName):
                             playerName = splitInput[2];
