@@ -14,7 +14,7 @@
             get => endurance;
             private set
             {
-                StatValidator.ValidateStat(value, "Endurance");
+                Stats.Validate(value, "Endurance");
 
                 endurance = value;
             }
@@ -24,7 +24,7 @@
             get => sprint;
             private set
             {
-                StatValidator.ValidateStat(value, "Sprint");
+                Stats.Validate(value, "Sprint");
 
                 sprint = value;
             }
@@ -35,7 +35,7 @@
             get => dribble;
             private set
             {
-                StatValidator.ValidateStat(value, "Dribble");
+                Stats.Validate(value, "Dribble");
 
                 dribble = value;
             }
@@ -46,7 +46,7 @@
             get => passing;
             private set
             {
-                StatValidator.ValidateStat(value, "Passing");
+                Stats.Validate(value, "Passing");
 
                 passing = value;
             }
@@ -57,7 +57,7 @@
             get => shooting;
             private set
             {
-                StatValidator.ValidateStat(value, "Shooting");
+                Stats.Validate(value, "Shooting");
 
                 shooting = value;
             }

@@ -17,7 +17,7 @@
             get => name;
             private set
             {
-                NameValidator.ValidateName(value);
+                Names.Validate(value);
 
                 name = value;
             }

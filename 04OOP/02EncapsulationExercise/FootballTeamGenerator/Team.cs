@@ -6,7 +6,7 @@
     public class Team
     {
         private string name;
-        private Dictionary<string, Player> players;
+        private readonly Dictionary<string, Player> players;
 
         public Team(string name)
         {
@@ -19,7 +19,7 @@
             get => name;
             private set
             {
-                NameValidator.ValidateName(value);
+                Names.Validate(value);
 
                 name = value;
             }
