@@ -23,9 +23,9 @@
                         case "Add" when teams.ContainsKey(teamName):
                             string playerName = splitInput[2];
                             int[] statValues = new int[5];
-                            for (int index = 3; index <= 7; index++)
+                            for (int inputIndex = 3, statIndex = 0; inputIndex <= 7; inputIndex++, statIndex++)
                             {
-                                statValues[index - 3] = (int.Parse(splitInput[index]));
+                                statValues[statIndex] = (int.Parse(splitInput[inputIndex]));
                             }
                             teams[teamName].AddPlayer(new Player(playerName, new PlayerStatList(statValues)));
                             break;
