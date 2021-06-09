@@ -23,6 +23,25 @@
             }
             List<string> results = wordOccurrences.OrderByDescending(quantity => quantity.Value).Select(kvp => $"{kvp.Key} - {kvp.Value}").ToList();
             File.WriteAllText("../../../actualResults.txt", string.Join(Environment.NewLine, results));
+            Console.WriteLine(CompareFiles("../../../actualResults.txt", "../../../expectedResult.txt"));
+        }
+
+        static string CompareFiles(string resultsPath, string expectedResultsPath)
+        {
+            byte[] results = File.ReadAllBytes(resultsPath);
+            byte[] expectedResults = File.ReadAllBytes(expectedResultsPath);
+            if (results.Length == expectedResults.Length)
+            {
+                for (int i = 0; i < results.Length; i++)
+                {
+                    if (results[i] != expectedResults[i])
+                    {
+                        return "Results do not match expected results!";
+                    }
+                }
+                return "Results match expected results!";
+            }
+            return "Results do not match expected results!";
         }
     }
 }
