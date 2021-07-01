@@ -3,6 +3,6 @@
     using System.Collections.Generic;
     public interface ILieutenantGeneral : IPrivate
     {
-        public List<IPrivate> Privates { get; set; }
+        public List<ISoldier> Privates { get; set; }
     }
 }

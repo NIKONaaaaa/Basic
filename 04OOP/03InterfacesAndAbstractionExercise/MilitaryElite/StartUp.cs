@@ -11,7 +11,6 @@
         static void Main()
         {
             string command;
-            var privates = new List<IPrivate>();
             var soldiers = new List<ISoldier>();
 
             while ((command = Console.ReadLine()) != "End")
@@ -21,7 +20,6 @@
                 if (entry[0] == "Private")
                 {
                     var newPrivate = new Private(entry[1], entry[2], entry[3], decimal.Parse(entry[4]));
-                    privates.Add(newPrivate);
                     soldiers.Add(newPrivate);
                 }
                 else if (entry[0] == "LieutenantGeneral")
@@ -30,7 +28,7 @@
 
                     for (int i = 5; i < entry.Length; i++)
                     {
-                        newLtGen.Privates.Add(privates.FirstOrDefault(x => x.Id == entry[i]));
+                        newLtGen.Privates.Add(soldiers.Where(x => x.GetType().Name.ToString() == "Private").FirstOrDefault(x => x.Id == entry[i]));
                     }
 
                     soldiers.Add(newLtGen);

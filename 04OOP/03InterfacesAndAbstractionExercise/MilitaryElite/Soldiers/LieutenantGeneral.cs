@@ -7,11 +7,11 @@
     using System.Text;
     public class LieutenantGeneral : Private, ILieutenantGeneral
     {
-        public List<IPrivate> Privates { get; set; }
+        public List<ISoldier> Privates { get; set; }
 
         public LieutenantGeneral(string id, string firstName, string lastName, decimal salary) : base(id, firstName, lastName, salary)
         {
-            Privates = new List<IPrivate>();
+            Privates = new List<ISoldier>();
         }
 
         public override string ToString()
@@ -21,7 +21,7 @@
             sb.Append(Environment.NewLine);
             sb.Append("Privates:");
 
-            foreach (var prvt in Privates)
+            foreach (Private prvt in Privates)
             {
                 sb.Append(Environment.NewLine);
                 sb.Append($"  {prvt.Stringify()}");
