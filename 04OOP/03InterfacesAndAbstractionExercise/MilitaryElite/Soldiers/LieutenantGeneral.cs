@@ -12,6 +12,6 @@
             Privates = new List<ISoldier>();
         }
 
-        public override string ToString() => this.LtGeneralToString();
+        public override string ToString() => this.Stringify();
     }
 }

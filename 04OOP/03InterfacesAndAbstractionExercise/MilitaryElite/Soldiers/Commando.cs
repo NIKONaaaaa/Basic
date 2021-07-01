@@ -12,6 +12,6 @@
             Missions = new List<IMission>();
         }
 
-        public override string ToString() => this.CommandoToString();
+        public override string ToString() => this.Stringify();
     }
 }

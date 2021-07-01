@@ -11,6 +11,6 @@
             CodeNumber = codeNumber;
         }
 
-        public override string ToString() => this.SpyToString();
+        public override string ToString() => this.Stringify();
     }
 }
