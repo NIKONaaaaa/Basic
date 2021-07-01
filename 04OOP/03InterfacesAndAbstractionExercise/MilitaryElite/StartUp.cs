@@ -45,7 +45,7 @@
 
                     soldiers.Add(newEngineer);
                 }
-                else if (entry[0] == "Commando")
+                else if (entry[0] == "Commando" && (entry[5] == "Marines" || entry[5] == "Airforces"))
                 {
                     var newCommando = new Commando(entry[1], entry[2], entry[3], decimal.Parse(entry[4]), entry[5]);
 
