@@ -27,6 +27,7 @@
                 else if (entry[0] == "LieutenantGeneral")
                 {
                     var newLtGen = new LieutenantGeneral(entry[1], entry[2], entry[3], decimal.Parse(entry[4]));
+
                     for (int i = 5; i < entry.Length; i++)
                     {
                         newLtGen.Privates.Add(privates.FirstOrDefault(x => x.Id == entry[i]));
