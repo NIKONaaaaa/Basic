@@ -14,7 +14,7 @@
 
         public void CompleteMission()
         {
-            State = "finished";
+            State = "Finished";
         }
 
         public override string ToString()

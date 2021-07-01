@@ -1,48 +1,41 @@
 ﻿namespace MilitaryElite.Extensions
 {
     using Interfaces;
-    using Soldiers;
     public static class Stringifier
     {
-        public static string Stringify(this ISoldier soldier)
+        public static string SoldierToString(this ISoldier soldier)
         {
             return $"Name: {soldier.FirstName} {soldier.LastName} Id: {soldier.Id}";
         }
 
-        public static string Stringify(this IPrivate soldier)
+        public static string PrivateToString(this IPrivate soldier)
         {
-            var entry = new Soldier(soldier.Id, soldier.FirstName, soldier.LastName);
-            return $"{entry.Stringify()} Salary: {soldier.Salary:f2}";
+            return $"{SoldierToString(soldier)} Salary: {soldier.Salary:f2}";
         }
 
-        public static string Stringify(this ISpy soldier)
+        public static string SpyToString(this ISpy soldier)
         {
-            var entry = new Soldier(soldier.Id, soldier.FirstName, soldier.LastName);
-            return $"{entry.Stringify()}\r\nCode Number: {soldier.CodeNumber}";
+            return $"{SoldierToString(soldier)}\r\nCode Number: {soldier.CodeNumber}";
         }
 
-        public static string Stringify(this ILieutenantGeneral soldier)
+        public static string LtGeneralToString(this ILieutenantGeneral soldier)
         {
-            var entry = new Private(soldier.Id, soldier.FirstName, soldier.LastName, soldier.Salary);
-            return $"{entry.Stringify()}\r\nPrivates:";
+            return $"{PrivateToString(soldier)}\r\nPrivates:";
         }
 
-        public static string Stringify(this ISpecialisedSoldier soldier)
+        public static string SpecialistToString(this ISpecialisedSoldier soldier)
         {
-            var entry = new Private(soldier.Id, soldier.FirstName, soldier.LastName, soldier.Salary);
-            return $"{entry.Stringify()}\r\nCorps: {soldier.Corps}";
+            return $"{PrivateToString(soldier)}\r\nCorps: {soldier.Corps}";
         }
 
-        public static string Stringify(this ICommando soldier)
+        public static string CommandoToString(this ICommando soldier)
         {
-            var entry = new SpecialisedSoldier(soldier.Id, soldier.FirstName, soldier.LastName, soldier.Salary, soldier.Corps);
-            return $"{entry.Stringify()}\r\nMissions:";
+            return $"{SpecialistToString(soldier)}\r\nMissions:";
         }
 
-        public static string Stringify(this IEngineer soldier)
+        public static string EngineerToString(this IEngineer soldier)
         {
-            var entry = new SpecialisedSoldier(soldier.Id, soldier.FirstName, soldier.LastName, soldier.Salary, soldier.Corps);
-            return $"{entry.Stringify()}\r\nRepairs:";
+            return $"{SpecialistToString(soldier)}\r\nRepairs:";
         }
     }
 }

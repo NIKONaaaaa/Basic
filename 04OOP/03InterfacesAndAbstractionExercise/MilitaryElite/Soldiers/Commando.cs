@@ -16,7 +16,7 @@
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append(this.Stringify());
+            sb.Append(this.CommandoToString());
 
             foreach (var mission in Missions)
             {

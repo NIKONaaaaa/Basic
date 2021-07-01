@@ -2,7 +2,6 @@
 {
     using Extensions;
     using Interfaces;
-    using System;
     using System.Collections.Generic;
     using System.Text;
     public class LieutenantGeneral : Private, ILieutenantGeneral
@@ -17,11 +16,11 @@
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append(this.Stringify());
+            sb.Append(this.LtGeneralToString());
             
             foreach (Private prvt in Privates)
             {
-                sb.Append($"\r\n  {prvt.Stringify()}");
+                sb.Append($"\r\n  {prvt.PrivateToString()}");
             }
 
             return sb.ToString();

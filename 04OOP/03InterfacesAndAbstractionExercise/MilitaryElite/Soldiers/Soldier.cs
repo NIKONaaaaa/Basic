@@ -1,6 +1,5 @@
 ﻿namespace MilitaryElite.Soldiers
 {
-    using Extensions;
     using Interfaces;
     public class Soldier : ISoldier
     {
@@ -13,11 +12,6 @@
             Id = id;
             FirstName = firstName;
             LastName = lastName;
-        }
-
-        public override string ToString()
-        {
-            return this.Stringify();
         }
     }
 }

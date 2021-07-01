@@ -1,6 +1,4 @@
-﻿using System.Runtime.Serialization;
-
-namespace MilitaryElite.Soldiers
+﻿namespace MilitaryElite.Soldiers
 {
     using Extensions;
     using Interfaces;
@@ -15,7 +13,7 @@ namespace MilitaryElite.Soldiers
 
         public override string ToString()
         {
-            return this.Stringify();
+            return this.SpyToString();
         }
     }
 }
