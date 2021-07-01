@@ -3,7 +3,6 @@
     using Extensions;
     using Interfaces;
     using System.Collections.Generic;
-    using System.Text;
     public class Commando : SpecialisedSoldier, ICommando
     {
         public List<IMission> Missions { get; set; }
@@ -13,17 +12,6 @@
             Missions = new List<IMission>();
         }
 
-        public override string ToString()
-        {
-            StringBuilder sb = new StringBuilder();
-            sb.Append(this.CommandoToString());
-
-            foreach (var mission in Missions)
-            {
-                sb.Append($"\r\n  {mission}");
-            }
-
-            return sb.ToString();
-        }
+        public override string ToString() => this.CommandoToString();
     }
 }

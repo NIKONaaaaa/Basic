@@ -3,7 +3,6 @@
     using Extensions;
     using Interfaces;
     using System.Collections.Generic;
-    using System.Text;
     public class Engineer : SpecialisedSoldier, IEngineer
     {
         public List<IRepair> Repairs { get; set; }
@@ -13,17 +12,6 @@
             Repairs = new List<IRepair>();
         }
 
-        public override string ToString()
-        {
-            StringBuilder sb = new StringBuilder();
-            sb.Append(this.EngineerToString());
-            
-            foreach (var repair in Repairs)
-            {
-                sb.Append($"\r\n  {repair}");
-            }
-
-            return sb.ToString();
-        }
+        public override string ToString() => this.EngineerToString();
     }
 }

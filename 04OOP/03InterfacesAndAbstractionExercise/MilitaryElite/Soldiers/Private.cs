@@ -11,9 +11,6 @@
             Salary = salary;
         }
 
-        public override string ToString()
-        {
-            return this.PrivateToString();
-        }
+        public override string ToString() => this.PrivateToString();
     }
 }

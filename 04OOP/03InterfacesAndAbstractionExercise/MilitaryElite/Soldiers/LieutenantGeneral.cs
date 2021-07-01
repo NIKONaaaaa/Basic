@@ -3,7 +3,6 @@
     using Extensions;
     using Interfaces;
     using System.Collections.Generic;
-    using System.Text;
     public class LieutenantGeneral : Private, ILieutenantGeneral
     {
         public List<ISoldier> Privates { get; set; }
@@ -13,17 +12,6 @@
             Privates = new List<ISoldier>();
         }
 
-        public override string ToString()
-        {
-            StringBuilder sb = new StringBuilder();
-            sb.Append(this.LtGeneralToString());
-            
-            foreach (Private prvt in Privates)
-            {
-                sb.Append($"\r\n  {prvt.PrivateToString()}");
-            }
-
-            return sb.ToString();
-        }
+        public override string ToString() => this.LtGeneralToString();
     }
 }

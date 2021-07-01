@@ -12,9 +12,6 @@
             Hours = hours;
         }
 
-        public override string ToString()
-        {
-            return $"Part Name: {Part} Hours Worked: {Hours}";
-        }
+        public override string ToString() => $"Part Name: {Part} Hours Worked: {Hours}";
     }
 }

@@ -17,9 +17,6 @@
             State = "Finished";
         }
 
-        public override string ToString()
-        {
-            return $"Code Name: {CodeName} State: {State}";
-        }
+        public override string ToString() => $"Code Name: {CodeName} State: {State}";
     }
 }
