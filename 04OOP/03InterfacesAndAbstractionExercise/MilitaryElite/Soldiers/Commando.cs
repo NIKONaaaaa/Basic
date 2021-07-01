@@ -4,22 +4,12 @@
     using Interfaces;
     using System.Collections.Generic;
     using System.Text;
-    public class Commando : ICommando
+    public class Commando : SpecialisedSoldier, ICommando
     {
-        public string Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public decimal Salary { get; set; }
-        public string Corps { get; set; }
         public List<IMission> Missions { get; set; }
 
-        public Commando(string id, string firstName, string lastName, decimal salary, string soldiers)
+        public Commando(string id, string firstName, string lastName, decimal salary, string corps) : base(id, firstName, lastName, salary, corps)
         {
-            Id = id;
-            FirstName = firstName;
-            LastName = lastName;
-            Salary = salary;
-            Corps = soldiers;
             Missions = new List<IMission>();
         }
 

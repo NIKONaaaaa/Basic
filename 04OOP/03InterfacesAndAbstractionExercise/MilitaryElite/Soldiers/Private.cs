@@ -2,18 +2,12 @@
 {
     using Extensions;
     using Interfaces;
-    public class Private : IPrivate
+    public class Private : Soldier, IPrivate
     {
-        public string Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
         public decimal Salary { get; set; }
 
-        public Private(string id, string firstName, string lastName, decimal salary)
+        public Private(string id, string firstName, string lastName, decimal salary) : base(id, firstName, lastName)
         {
-            Id = id;
-            FirstName = firstName;
-            LastName = lastName;
             Salary = salary;
         }
 

@@ -5,20 +5,12 @@
     using System;
     using System.Collections.Generic;
     using System.Text;
-    public class LieutenantGeneral : ILieutenantGeneral
+    public class LieutenantGeneral : Private, ILieutenantGeneral
     {
-        public string Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public decimal Salary { get; set; }
         public List<IPrivate> Privates { get; set; }
 
-        public LieutenantGeneral(string id, string firstName, string lastName, decimal salary)
+        public LieutenantGeneral(string id, string firstName, string lastName, decimal salary) : base(id, firstName, lastName, salary)
         {
-            Id = id;
-            FirstName = firstName;
-            LastName = lastName;
-            Salary = salary;
             Privates = new List<IPrivate>();
         }
 
