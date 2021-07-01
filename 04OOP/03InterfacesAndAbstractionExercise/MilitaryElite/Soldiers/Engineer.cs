@@ -2,7 +2,6 @@
 {
     using Extensions;
     using Interfaces;
-    using System;
     using System.Collections.Generic;
     using System.Text;
     public class Engineer : SpecialisedSoldier, IEngineer
@@ -17,14 +16,11 @@
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine(this.Stringify());
-            sb.AppendLine($"Corps: {Corps}");
-            sb.Append("Repairs:");
-
+            sb.Append(this.Stringify());
+            
             foreach (var repair in Repairs)
             {
-                sb.Append(Environment.NewLine);
-                sb.AppendJoin(Environment.NewLine, $"  {repair}");
+                sb.Append($"\r\n  {repair}");
             }
 
             return sb.ToString();

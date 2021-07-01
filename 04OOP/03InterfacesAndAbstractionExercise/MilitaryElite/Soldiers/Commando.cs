@@ -16,14 +16,11 @@
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine(this.Stringify());
-            sb.AppendLine($"Corps: {Corps}");
-            sb.Append("Missions:");
+            sb.Append(this.Stringify());
 
             foreach (var mission in Missions)
             {
-                sb.AppendLine();
-                sb.Append($"  {mission}");
+                sb.Append($"\r\n  {mission}");
             }
 
             return sb.ToString();

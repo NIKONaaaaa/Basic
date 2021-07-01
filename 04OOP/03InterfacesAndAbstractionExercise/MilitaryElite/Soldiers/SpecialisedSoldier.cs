@@ -1,5 +1,6 @@
 ﻿namespace MilitaryElite.Soldiers
 {
+    using Extensions;
     using Interfaces;
     public class SpecialisedSoldier : Private, ISpecialisedSoldier
     {
@@ -8,6 +9,11 @@
         public SpecialisedSoldier(string id, string firstName, string lastName, decimal salary, string corps) : base(id, firstName, lastName, salary)
         {
             Corps = corps;
+        }
+
+        public override string ToString()
+        {
+            return this.Stringify();
         }
     }
 }

@@ -18,13 +18,10 @@
         {
             StringBuilder sb = new StringBuilder();
             sb.Append(this.Stringify());
-            sb.Append(Environment.NewLine);
-            sb.Append("Privates:");
-
+            
             foreach (Private prvt in Privates)
             {
-                sb.Append(Environment.NewLine);
-                sb.Append($"  {prvt.Stringify()}");
+                sb.Append($"\r\n  {prvt.Stringify()}");
             }
 
             return sb.ToString();

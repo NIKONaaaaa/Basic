@@ -28,7 +28,7 @@
 
                     for (int i = 5; i < entry.Length; i++)
                     {
-                        newLtGen.Privates.Add(soldiers.Where(x => x.GetType().Name.ToString() == "Private").FirstOrDefault(x => x.Id == entry[i]));
+                        newLtGen.Privates.Add(soldiers.FirstOrDefault(x => x.Id == entry[i]));
                     }
 
                     soldiers.Add(newLtGen);
