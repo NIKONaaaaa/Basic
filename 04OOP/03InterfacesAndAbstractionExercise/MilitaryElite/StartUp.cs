@@ -35,20 +35,17 @@
 
                     soldiers.Add(newLtGen);
                 }
-                else if (entry[0] == "Engineer")
+                else if (entry[0] == "Engineer" && (entry[5] == "Marines" || entry[5] == "Airforces"))
                 {
-                    if (entry[5] == "Marines" || entry[5] == "Airforces")
+                    var newEngineer = new Engineer(entry[1], entry[2], entry[3], decimal.Parse(entry[4]), entry[5]);
+
+                    for (int i = 6; i < entry.Length - 1; i += 2)
                     {
-                        var newEngineer = new Engineer(entry[1], entry[2], entry[3], decimal.Parse(entry[4]), entry[5]);
-
-                        for (int i = 6; i < entry.Length - 1; i += 2)
-                        {
-                            var newRepair = new Repair(entry[i], int.Parse(entry[i + 1]));
-                            newEngineer.Repairs.Add(newRepair);
-                        }
-
-                        soldiers.Add(newEngineer);
+                        var newRepair = new Repair(entry[i], int.Parse(entry[i + 1]));
+                        newEngineer.Repairs.Add(newRepair);
                     }
+
+                    soldiers.Add(newEngineer);
                 }
                 else if (entry[0] == "Commando")
                 {
