@@ -12,10 +12,7 @@
             State = state;
         }
 
-        public void CompleteMission()
-        {
-            State = "Finished";
-        }
+        public void CompleteMission() => State = "Finished";
 
         public override string ToString() => $"Code Name: {CodeName} State: {State}";
     }
